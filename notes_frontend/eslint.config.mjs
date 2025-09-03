@@ -27,6 +27,14 @@ export default [
         expect: "readonly",
         // Browser globals
         HTMLElement: "readonly",
+        window: "readonly",
+        document: "readonly",
+        fetch: "readonly",
+        Headers: "readonly",
+        URLSearchParams: "readonly",
+        Response: "readonly",
+        localStorage: "readonly",
+        confirm: "readonly",
         // Node.js globals
         process: "readonly",
         console: "readonly"

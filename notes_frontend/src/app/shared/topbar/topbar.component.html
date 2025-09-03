@@ -1,0 +1,14 @@
+<header class="topbar-wrap">
+  <div class="left">
+    <div class="brand">
+      <span class="logo">📝</span>
+      <span class="name">Notes</span>
+    </div>
+    <input class="input search" type="search" placeholder="Search notes..." [ngModel]="q()" (ngModelChange)="onQueryChange($event)">
+  </div>
+  <div class="right">
+    <button class="btn btn-accent" (click)="newNote()">New Note</button>
+    <span class="user">{{ userEmail() }}</span>
+    <button class="btn btn-ghost" (click)="logout()">Logout</button>
+  </div>
+</header>

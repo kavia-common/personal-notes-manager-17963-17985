@@ -1,0 +1,19 @@
+<aside class="sidebar-wrap">
+  <div class="section">
+    <div class="section-title">Browse</div>
+    <button class="nav-item" [ngClass]="{active: !activeCategoryId() && !isArchived()}" (click)="selectAll()">
+      <span>All notes</span>
+    </button>
+    <button class="nav-item" [ngClass]="{active: isArchived()}" (click)="selectArchived()">
+      <span>Archived</span>
+    </button>
+  </div>
+
+  <div class="section">
+    <div class="section-title">Categories</div>
+    <button class="nav-item" *ngFor="let c of categories()" [ngClass]="{active: activeCategoryId() === c.id}" (click)="selectCategory(c.id)">
+      <span class="dot" [style.background]="c.color || 'var(--color-primary)'"></span>
+      <span>{{ c.name }}</span>
+    </button>
+  </div>
+</aside>

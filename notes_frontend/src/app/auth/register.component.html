@@ -1,0 +1,21 @@
+<div class="auth-wrap">
+  <div class="card auth-card">
+    <div class="head">
+      <div class="logo">📝</div>
+      <div class="title">Create account</div>
+      <div class="subtitle">Start taking notes</div>
+    </div>
+
+    <div class="form">
+      <input class="input" placeholder="Name" [ngModel]="name()" (ngModelChange)="name.set($event)">
+      <input class="input" placeholder="Email" type="email" [ngModel]="email()" (ngModelChange)="email.set($event)">
+      <input class="input" placeholder="Password" type="password" [ngModel]="password()" (ngModelChange)="password.set($event)">
+      <div class="error" *ngIf="error()">{{ error() }}</div>
+      <button class="btn btn-primary" (click)="submit()">Create account</button>
+    </div>
+
+    <div class="foot">
+      <a routerLink="/login">Back to sign in</a>
+    </div>
+  </div>
+</div>

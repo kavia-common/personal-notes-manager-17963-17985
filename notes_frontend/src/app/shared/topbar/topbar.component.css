@@ -1,0 +1,16 @@
+/* See previous component write: providing stylesheet to close file properly */
+.topbar-wrap {
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: white;
+  padding: 0 .75rem;
+  border-bottom: 1px solid #eef2f7;
+}
+.left { display: flex; align-items: center; gap: 1rem; flex: 1; }
+.brand { display: flex; align-items: center; gap: .5rem; color: var(--color-primary); font-weight: 700; }
+.logo { font-size: 20px; }
+.search { max-width: 560px; width: 100%; }
+.right { display: flex; align-items: center; gap: .5rem; }
+.user { color: var(--color-muted); font-size: .9rem; }

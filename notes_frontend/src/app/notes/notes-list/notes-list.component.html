@@ -1,0 +1,28 @@
+<div class="content-wrap">
+  <div class="grid">
+    <article class="card note" *ngFor="let n of notes(); trackBy: trackById">
+      <header class="note-head">
+        <h3 class="title">{{ n.title || 'Untitled' }}</h3>
+        <div class="actions">
+          <button class="btn btn-ghost" (click)="edit(n)">Edit</button>
+          <button class="btn btn-ghost" (click)="toggleArchive(n)">{{ n.archived ? 'Unarchive' : 'Archive' }}</button>
+          <button class="btn btn-ghost" (click)="remove(n)">Delete</button>
+        </div>
+      </header>
+      <div class="note-body">
+        <div class="snippet" [innerText]="(n.content || '').slice(0, 240)"></div>
+      </div>
+      <footer class="note-foot">
+        <span class="date">Updated {{ n.updatedAt | date:'medium' }}</span>
+      </footer>
+    </article>
+  </div>
+
+  <div class="empty" *ngIf="notes().length === 0">
+    <div class="card empty-card">
+      <div class="emoji">🗒️</div>
+      <div class="headline">No notes yet</div>
+      <div class="muted">Use the New Note button to create your first note.</div>
+    </div>
+  </div>
+</div>

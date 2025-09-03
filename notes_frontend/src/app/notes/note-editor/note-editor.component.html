@@ -1,0 +1,18 @@
+<div class="editor-wrap">
+  <div class="card editor">
+    <div class="row">
+      <input class="input" placeholder="Title" [ngModel]="form().title" (ngModelChange)="onTitleChange($event)">
+      <select class="select" [ngModel]="form().categoryId" (ngModelChange)="onCategoryChange($event)">
+        <option [ngValue]="null">No category</option>
+        <option *ngFor="let c of categories()" [ngValue]="c.id">{{ c.name }}</option>
+      </select>
+    </div>
+
+    <textarea class="textarea" rows="16" placeholder="Start typing your note..." [ngModel]="form().content" (ngModelChange)="onContentChange($event)"></textarea>
+
+    <div class="actions">
+      <button class="btn btn-secondary" (click)="cancel()">Cancel</button>
+      <button class="btn btn-primary" (click)="save()">Save</button>
+    </div>
+  </div>
+</div>

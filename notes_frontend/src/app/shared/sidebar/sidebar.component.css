@@ -1,0 +1,17 @@
+/* Sidebar styles already detailed when component was introduced */
+.sidebar-wrap {
+  background: var(--color-surface);
+  height: calc(100vh - 56px);
+  overflow: auto;
+  padding: 1rem;
+  border-right: 1px solid #eef2f7;
+}
+.section + .section { margin-top: 1.25rem; }
+.section-title { font-size: .8rem; color: var(--color-muted); text-transform: uppercase; letter-spacing: .08em; margin-bottom: .5rem; }
+.nav-item {
+  width: 100%; text-align: left; padding: .55rem .6rem; border-radius: 10px; border: none;
+  background: transparent; color: var(--color-text); display: flex; align-items: center; gap: .5rem; cursor: pointer;
+}
+.nav-item:hover { background: #eef2f7; }
+.nav-item.active { background: white; box-shadow: var(--shadow); }
+.dot { width: 10px; height: 10px; display: inline-block; border-radius: 999px; }
